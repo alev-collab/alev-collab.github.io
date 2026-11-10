@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alec, AI Operations</title>
+<meta name="description" content="Alec trains AI support agents in plain language. Projects, results and how I work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">AI Operations · Customer Experience</div>
+    <h1>Alec</h1>
+    <div class="role">AI OPERATIONS · CONVERSATIONAL AI · SYSTEMS</div>
+    <p class="thesis">I train AI support agents to handle real customers, using <span class="hl">plain language instead of code</span>.</p>
+    <p class="context">No coding background. Strong reading, sharp comprehension and fast learning. I turn messy support problems into clear rules an AI can follow, and I'm the first call when something in the system is off.</p>
+    <div class="chips">
+      <span class="chip">Conversational AI design</span>
+      <span class="chip">Support automation</span>
+      <span class="chip">System configuration</span>
+      <span class="chip">Help center &amp; storefront</span>
+      <span class="chip">QA &amp; reporting</span>
+    </div>
+    <div class="cue" aria-hidden="true">SCROLL</div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="eyebrow">Work</div>
+  <h2>Projects and roles.</h2>
+  <p class="lead">Each folder opens the full story: what I walked into, what I built and the results month by month.</p>
+  <div class="folders">
+    <a class="folder" href="wnw-group/">
+      <span class="tag">WNW Group · Apr 2026 to now</span>
+      <h3>AI Operations for a direct-to-consumer brand</h3>
+      <p>Took over the AI support agent and taught it to finish the job: rules, guardrails, voice, automations, help center and storefront fixes.</p>
+      <div class="stats"><span><b>29,900+</b>resolved by AI</span><span><b>51→75%</b>satisfaction</span></div>
+      <span class="open">Open folder →</span>
+    </a>
+    <div class="folder soon" aria-hidden="true">
+      <span class="tag">Next chapter</span>
+      <p>More to come.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="eyebrow">How I work</div>
+  <h2>Read first, then fix.</h2>
+  <div class="how">
+    <div class="how-item"><h3>Read the whole conversation first</h3><p>Most "AI bugs" turn out to be a rule that reads two ways. I find the sentence, not just the symptom.</p></div>
+    <div class="how-item"><h3>Write rules a model can't misread</h3><p>Plain, precise language with clear conditions and one home per rule.</p></div>
+    <div class="how-item"><h3>Test before it touches a customer</h3><p>Draft, replay against real past conversations, then verify on live tickets.</p></div>
+    <div class="how-item"><h3>Learn the system fast</h3><p>New platforms, automation engines and storefront templates in weeks, by reading and careful testing.</p></div>
+  </div>
+</section>
+
+<footer class="close">
+  <p>I make AI support feel like talking to someone who read your message.</p>
+  <p class="sub">Open to roles in AI operations, conversational AI design, customer experience automation, system configuration and storefront content.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  // Line charts, built from each card's data
+  var NS='http://www.w3.org/2000/svg';
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  function fmtV(v,f){return f==='pct'?(Math.round(v)+'%'):Math.round(v).toLocaleString('en-US');}
+  document.querySelectorAll('.chart').forEach(function(c){
+    var ys=c.dataset.series.split(',').map(Number), xs=c.dataset.labels.split(','), f=c.dataset.fmt;
+    var W=420,H=170,pl=6,pr=6,pt=22,pb=24, max=Math.max.apply(null,ys);
+    var top=f==='pct'?Math.ceil(max/20)*20:Math.ceil(max/10000)*10000;
+    var X=function(i){return pl+i*(W-pl-pr)/(ys.length-1)}, Y=function(v){return pt+(1-v/top)*(H-pt-pb)};
+    var svg=el('svg',{viewBox:'0 0 '+W+' '+H,'aria-hidden':'true'});
+    [0,.5,1].forEach(function(t){svg.appendChild(el('line',{'class':'grid',x1:pl,x2:W-pr,y1:Y(top*t),y2:Y(top*t)}));});
+    var d=ys.map(function(v,i){return (i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)}).join(' ');
+    svg.appendChild(el('path',{'class':'area',d:d+' L'+X(ys.length-1)+' '+Y(0)+' L'+X(0)+' '+Y(0)+' Z'}));
+    var ln=el('path',{'class':'ln',d:d}); svg.appendChild(ln);
+    ys.forEach(function(v,i){
+      var last=i===ys.length-1, first=i===0;
+      var g=el('circle',{'class':'pt'+(last?' end':''),cx:X(i),cy:Y(v),r:last?5:3.5});
+      var t=el('title',{}); t.textContent=xs[i]+': '+fmtV(v,f); g.appendChild(t); svg.appendChild(g);
+      var lx=el('text',{x:X(i),y:H-6,'text-anchor':first?'start':last?'end':'middle'}); lx.textContent=xs[i]; svg.appendChild(lx);
+      if(first||last){var tv=el('text',{'class':'v',x:X(i)+(first?0:0),y:Y(v)-10,'text-anchor':first?'start':'end'}); tv.textContent=fmtV(v,f); svg.appendChild(tv);}
+    });
+    c.querySelector('.plot').appendChild(svg);
+    c._ln=ln;
+  });
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js');
+
+  // Number each section's eyebrow
+  document.querySelectorAll('section .eyebrow').forEach(function(e, i){
+    var n = document.createElement('span'); n.className = 'num'; n.textContent = '0' + (i + 1) + ' /';
+    e.insertBefore(n, e.firstChild);
+  });
+
+  // Scroll progress bar
+  var bar = document.createElement('div'); bar.className = 'progress'; bar.setAttribute('aria-hidden','true');
+  document.body.appendChild(bar);
+  function prog(){
+    var h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, scrollY / h) : 0) + ')';
+  }
+  addEventListener('scroll', prog, {passive:true}); prog();
+
+  // Section reveals: heading first, then items stagger in
+  var sel = '.hero .eyebrow, .hero h1, .hero .role, .hero .thesis, .hero .chips, section .eyebrow, section h2, .lead, .metric, .footnote, .how-item, .card, .sample, .step, .close p, .hero .context';
+  var items = Array.prototype.slice.call(document.querySelectorAll(sel));
+  items.forEach(function(el){
+    var sib = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.setProperty('--d', Math.min(sib, 6) * 0.09 + 's');
+    el.classList.add('rv');
+  });
+  var ro = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } });
+  }, {threshold: 0.12, rootMargin: '0px 0px -8% 0px'});
+  items.forEach(function(el){ ro.observe(el); });
+
+  var hl = document.querySelectorAll('.hl');
+  setTimeout(function(){ hl.forEach(function(h){ h.classList.add('on'); }); }, 300);
+
+  // Count-ups and bar growth when a metric scrolls into view
+  function fmt(n){ return n.toLocaleString('en-US'); }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      e.target.querySelectorAll('.count').forEach(function(c){
+        var to = +c.dataset.to, dec = +(c.dataset.dec||0), pre = c.dataset.prefix || '', suf = c.dataset.suffix || '';
+        var t0 = performance.now(), dur = 1300;
+        (function tick(t){
+          var p = Math.min(1, (t - t0) / dur), v = to * (1 - Math.pow(1 - p, 3));
+          c.textContent = pre + (dec ? v.toFixed(dec) : fmt(Math.round(v))) + suf;
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      });
+      var ln = e.target._ln;
+      if (ln){
+        var len = ln.getTotalLength(), ch = e.target;
+        ln.style.transition = 'none'; ln.style.strokeDasharray = len; ln.style.strokeDashoffset = len; ch.classList.add('pre');
+        requestAnimationFrame(function(){ requestAnimationFrame(function(){ ln.style.transition = ''; ln.style.strokeDashoffset = 0; ch.classList.remove('pre'); }); });
+      }
+    });
+  }, {threshold: 0.35});
+  document.querySelectorAll('.metric').forEach(function(m){ io.observe(m); });
+})();
+</script>
+</body>
+</html>
