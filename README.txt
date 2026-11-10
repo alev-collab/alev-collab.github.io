@@ -2,7 +2,7 @@ Alec - personal site
 
 Structure
   index.html            Home: profile + project folders
-  wnw-group/index.html  Project folder: WNW Group, AI Operations
+  brand-type/index.html  Project folder: title, AI Operations
   assets/site.css       Shared styles
 
 Add a new project
