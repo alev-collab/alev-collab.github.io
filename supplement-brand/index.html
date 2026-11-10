@@ -3,11 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Alec · AI Operations & Systems</title>
-<meta name="description" content="The impact of Alec's AI Operations role for a direct-to-consumer supplement brand since late April 2026.">
+<title>Supplement Brand Operations · AI Systems</title>
+<meta name="description" content="Scaling AI support operations and automation for a direct-to-consumer supplement brand.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root{--bg:#0b0d10;--surface:#13171c;--surface-card:#181d24;--border:#262d38;--text:#f0f2f5;--muted:#9aa3af;--hl:#38bdf8;--accent:#38bdf8;--radius:16px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
+.wrap{max-width:960px;margin:0 auto;padding:40px 24px 120px;}
+
+/* Nav */
+.topnav{display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1px;color:var(--muted);margin-bottom:64px;}
+.topnav a{color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.topnav a:hover{color:var(--text);}
+
+/* Hero */
+.hero{padding:40px 0 80px;border-bottom:1px solid var(--border);position:relative;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--hl);margin-bottom:16px;}
+.hero h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(40px,7vw,64px);font-weight:800;letter-spacing:-1.5px;line-height:1.05;margin-bottom:20px;}
+.hero .role{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:1px;color:var(--muted);margin-bottom:24px;}
+.hero .thesis{font-size:clamp(18px,2.5vw,22px);max-width:760px;margin-bottom:20px;font-weight:500;}
+.hero .context{color:var(--muted);font-size:16px;max-width:640px;margin-bottom:32px;}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:100px;color:var(--muted);}
+
+/* Scroll animations */
+.rv{opacity:0;transform:translateY(24px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);transition-delay:var(--d,0s);}
+.rv.in{opacity:1;transform:translateY(0);}
+
+/* Sections */
+section{padding:96px 0;border-bottom:1px solid var(--border);}
+section .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--hl);margin-bottom:16px;}
+section h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(32px,4vw,44px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:20px;}
+.lead{color:var(--muted);font-size:18px;max-width:720px;margin-bottom:48px;}
+
+/* Ledger / Metrics */
+.ledger{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:32px;}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative;overflow:hidden;transition:transform 0.3s ease, border-color 0.3s ease;}
+.metric:hover{transform:translateY(-4px);border-color:var(--hl);}
+.metric .k{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;}
+.metric .big{font-family:'Bricolage Grotesque',sans-serif;font-size:42px;font-weight:800;letter-spacing:-1px;margin-bottom:16px;}
+.metric .ctx{font-size:14px;color:var(--muted);}
+
+/* Charts */
+.plot svg{width:100%;height:140px;margin-top:12px;}
+.plot .grid{stroke:var(--border);stroke-dasharray:3 3;stroke-width:1;}
+.plot .area{fill:rgba(56,189,248,0.06);}
+.plot .ln{fill:none;stroke:var(--hl);stroke-width:2.5;stroke-linecap:round;}
+.plot .pt{fill:var(--bg);stroke:var(--hl);stroke-width:2;}
+.plot text{fill:var(--muted);font-size:10px;font-family:'IBM Plex Mono',monospace;}
+.plot .v{fill:var(--text);font-weight:500;}
+
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px;}
+.strip .metric{padding:20px 24px;}
+.strip .metric .big{font-size:32px;margin-bottom:0;}
+.footnote{font-size:12px;color:var(--muted);font-family:'IBM Plex Mono',monospace;line-height:1.5;}
+
+/* How I work */
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:40px;}
+.how-item{background:var(--surface);border:1px solid var(--border);padding:32px;border-radius:var(--radius);transition:transform 0.3s ease;}
+.how-item:hover{transform:translateY(-4px);}
+.how-item h3{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;margin-bottom:12px;font-weight:700;}
+.how-item p{color:var(--muted);font-size:15px;}
+
+/* Work Grid */
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px;}
+.card{background:var(--surface);border:1px solid var(--border);padding:32px;border-radius:var(--radius);display:flex;flex-direction:column;position:relative;transition:transform 0.3s ease, border-color 0.3s ease;}
+.card:hover{transform:translateY(-4px);border-color:var(--hl);}
+.card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--hl);margin-bottom:12px;}
+.card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;margin-bottom:12px;}
+.card p{color:var(--muted);font-size:15px;margin-bottom:24px;flex-grow:1;}
+.card .out{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text);background:var(--surface-card);padding:12px 16px;border-radius:8px;border-left:2px solid var(--hl);}
+
+/* Timeline */
+.tl{display:flex;flex-direction:column;gap:32px;margin-top:48px;position:relative;padding-left:24px;border-left:2px solid var(--border);}
+.step{position:relative;}
+.step .when{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1px;color:var(--hl);margin-bottom:6px;}
+.step h3{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;}
+.step p{color:var(--muted);font-size:15px;max-width:640px;}
+
+/* Footer */
+.close{padding:96px 0 40px;text-align:center;}
+.close p{font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:700;margin-bottom:16px;max-width:600px;margin-left:auto;margin-right:auto;}
+.close .sub{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);letter-spacing:0.5px;}
+
+/* Progress bar */
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--hl);transform-origin:0 50%;transform:scaleX(0);z-index:100;transition:transform 0.1s linear;}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -28,7 +112,7 @@
       <span class="chip">Help center &amp; storefront</span>
       <span class="chip">Reporting</span>
     </div>
-    <div class="cue" aria-hidden="true">SCROLL</div>
+    <div class="cue" aria-hidden="true" style="margin-top:32px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:2px; color:var(--muted);">SCROLL ↓</div>
   </div>
 </header>
 
@@ -36,57 +120,55 @@
 <section id="impact">
   <div class="eyebrow">Impact</div>
   <h2>From an AI that escalated almost everything to one that resolves real work.</h2>
-  <p class="lead">I took over the AI support program for a direct-to-consumer supplement brand running on Shopify and CheckoutChamp in late April 2026, across thousands of customer conversations a week by email and chat. Every line starts the week I took over and runs month by month to October.</p>
+  <p class="lead">I took over the AI support program for a direct-to-consumer supplement brand running on Shopify and CheckoutChamp in late April 2026, across thousands of customer conversations a week by email and chat.</p>
 
   <div class="ledger">
     <div class="metric chart" data-series="244,1429,7218,15995,20540,26790,29925" data-labels="Start,May,Jun,Jul,Aug,Sep,Oct" data-fmt="int">
       <div class="k">Conversations the AI resolved on its own, running total</div>
       <div class="big"><span class="count" data-to="29900" data-suffix="+">29,900+</span></div>
-      <div class="plot" role="img" aria-label="Running total of AI-resolved conversations, from 244 in my first week to 29,925 by October"></div>
+      <div class="plot" role="img"></div>
       <p class="ctx">From 244 in my first week to almost 30,000, with no person needed.</p>
     </div>
 
     <div class="metric chart" data-series="11.9,8.2,26.7,43.2,27.5,33.4,28.7" data-labels="Start,May,Jun,Jul,Aug,Sep,Oct" data-fmt="pct">
       <div class="k">Share of AI conversations resolved without a hand-off</div>
       <div class="big"><span class="count" data-to="2.4" data-dec="1" data-suffix="×">2.4×</span></div>
-      <div class="plot" role="img" aria-label="AI resolution rate, from 11.9% at takeover to 28.7% in October, peaking at 43.2% in July"></div>
-      <p class="ctx">From 12% to 29%, peaking at 43% in July, while the AI took on far more conversations.</p>
+      <div class="plot" role="img"></div>
+      <p class="ctx">From 12% to 29%, peaking at 43% in July, while handling higher volume.</p>
     </div>
 
     <div class="metric chart" data-series="51.1,42.0,42.2,49.1,66.1,76.2,74.6" data-labels="Start,May,Jun,Jul,Aug,Sep,Oct" data-fmt="pct">
       <div class="k">Customer satisfaction since I joined</div>
       <div class="big"><span class="count" data-to="75" data-suffix="%">75%</span></div>
-      <div class="plot" role="img" aria-label="Customer satisfaction, from 51% at takeover to 75% in October, peaking at 76% in September"></div>
+      <div class="plot" role="img"></div>
       <p class="ctx">Satisfied customers rose from about half to three in four, and stayed there.</p>
     </div>
 
     <div class="metric chart" data-series="52.8,38.6,38.8,50.0,75.1,74.5" data-labels="Start,Jun,Jul,Aug,Sep,Oct" data-fmt="pct">
       <div class="k">How customers rate the AI itself</div>
       <div class="big"><span class="count" data-to="75" data-suffix="%">75%</span></div>
-      <div class="plot" role="img" aria-label="AI satisfaction score, from 53% at takeover to 75% by September and 74.5% in October"></div>
-      <p class="ctx">Rebuilt its voice and rules as volume grew sevenfold. Now rated on par with the human team.</p>
+      <div class="plot" role="img"></div>
+      <p class="ctx">Rebuilt its voice and rules as volume grew sevenfold. Rated on par with humans.</p>
     </div>
   </div>
 
   <div class="strip">
-    <div class="metric"><div class="k">Resolved by AI, last 3 months</div><div class="big"><span class="count" data-to="11300" data-suffix="+">11,300+</span></div></div>
-    <div class="metric"><div class="k">Agent hours saved, last 3 months</div><div class="big"><span class="count" data-to="1700" data-suffix="+">1,700+</span></div></div>
+    <div class="metric"><div class="k">Resolved by AI, last 3 mos</div><div class="big"><span class="count" data-to="11300" data-suffix="+">11,300+</span></div></div>
+    <div class="metric"><div class="k">Agent hours saved, last 3 mos</div><div class="big"><span class="count" data-to="1700" data-suffix="+">1,700+</span></div></div>
     <div class="metric"><div class="k">AI mistakes reviewed &amp; fixed</div><div class="big"><span class="count" data-to="190" data-suffix="+">190+</span></div></div>
   </div>
-  <p class="footnote">Figures come from the support platform's own reports. "Start" is my first week in the role (Apr 24 to 30, 2026); the AI rating's first point covers my first five weeks, as early ratings were few. October AI resolution counts run to Oct 21, when the platform changed how hand-offs are reported.</p>
 </section>
 
 <!-- HOW I WORK -->
 <section id="how">
   <div class="eyebrow">How I work</div>
-  <h2>Fluent in vibe coding and natural language architecture. Strong reading, sharp comprehension, fast learning.</h2>
+  <h2>Fluent in vibe coding and natural language architecture.</h2>
   <div class="how">
-    <div class="how-item"><h3>Read the whole conversation first</h3><p>Before changing anything, I read the full thread and the AI's own decision log. Most "AI bugs" turn out to be a rule that reads two ways.</p></div>
-    <div class="how-item"><h3>Write rules a model can't misread</h3><p>I write behaviour in plain, precise language: clear conditions, one home per rule, and the exact words automations depend on kept word for word.</p></div>
-    <div class="how-item"><h3>Test before it touches a customer</h3><p>Draft, replay against real past conversations, check edge cases that should <em>not</em> change, then publish and verify on live tickets the next day.</p></div>
-    <div class="how-item"><h3>Learn the system fast</h3><p>I picked up the support platform, its automation engine, AI tooling, storefront templates and reporting in weeks, by reading documentation and testing carefully.</p></div>
+    <div class="how-item"><h3>Read the whole conversation first</h3><p>Before changing anything, I read the full thread and the AI's decision log. Most bugs stem from conflicting rules.</p></div>
+    <div class="how-item"><h3>Write rules a model can't misread</h3><p>Precision language with clear conditions and one home per rule.</p></div>
+    <div class="how-item"><h3>Test before it touches a customer</h3><p>Replay against real past conversations and verify on live tickets.</p></div>
+    <div class="how-item"><h3>Learn the system fast</h3><p>Mastered support platforms, automation engines, and storefront templates in weeks.</p></div>
   </div>
-
 </section>
 
 <!-- WORK -->
@@ -94,23 +176,9 @@
   <div class="eyebrow">Selected work</div>
   <h2>What I built and fixed.</h2>
   <div class="work">
-    <article class="card"><span class="tag">AI training</span><h3>Rebuilt the AI's playbook</h3><p>Built and maintain 20+ conversation flows (order tracking, returns, cancellations, subscriptions, address changes), and restructured the core ones into one consistent format: guards first, then rules, then scenarios.</p><div class="out">Fewer contradictions, faster fixes, easier hand-off to anyone new.</div></article>
-    <article class="card"><span class="tag">Safety</span><h3>Guardrails that protect customers and revenue</h3><p>Built checks for payment-dispute and review threats, fraud claims and repeat contacts, plus a strict "no invented facts" rule so the AI only states what it can verify.</p><div class="out">Risky conversations reach a person fast. Routine ones don't.</div></article>
-    <article class="card"><span class="tag">Retention</span><h3>Respectful save offers</h3><p>Designed AI-led retention for subscription cancellations: one tailored offer, an honest confirmation when declined, and no pressure loops.</p><div class="out">Saves where possible, with no runaround that leads to disputes.</div></article>
-    <article class="card"><span class="tag">Voice</span><h3>A warmer, human tone</h3><p>Rewrote the AI's voice guidelines: a short personal introduction, empathy in its own words, and room to reassure instead of clipped status updates.</p><div class="out">AI satisfaction rose from 54% to 73%.</div></article>
-    <article class="card"><span class="tag">Automation</span><h3>Reliable workflows</h3><p>Audited dozens of automation rules and moved the fragile ones off customer-facing wording onto stable internal markers, so labels, routing and follow-ups keep firing.</p><div class="out">Clean data for reporting and no silent breakages.</div></article>
-    <article class="card"><span class="tag">Help center</span><h3>Self-service that answers first</h3><p>We rebuilt the help center with guided contact forms that collect the right details up front, and rewrote policy articles in clear, approved language.</p><a href="https://getamalahealth.com/apps/help/" target="_blank" rel="noopener">See it live ↗</a><div class="out">Better first messages mean faster, more accurate replies.</div></article>
-    <article class="card"><span class="tag">Storefront</span><h3>Fixed what drove tickets</h3><p>Built a branded shipment-tracking page and corrected product-page details (serving directions, shipping times, claims) that were creating confusion and complaints.</p><div class="out">Fewer "where is my order?" and "how do I use this?" contacts.</div></article>
-    <article class="card"><span class="tag">Troubleshooting</span><h3>First call when something's off</h3><p>The team's go-to when anything in the system misbehaves: broken automations, inbox and routing settings, integrations, storefront glitches. I trace it, fix it or get it to the right person fast.</p><div class="out">An in-house IT desk on a support budget.</div></article>
-    <article class="card"><span class="tag">QA &amp; reporting</span><h3>A feedback loop that compounds</h3><p>Ran weekly week-over-week reporting, kept a log of every AI mistake with its root cause and fix, and wrote the playbook and handover docs the team works from.</p><div class="out">Each error becomes a rule, so it doesn't happen twice.</div></article>
-  </div>
-  <div class="sample">
-    <div>
-      <span class="tag">Live sample · Help center</span>
-      <h3>A help center we built together</h3>
-      <p>Answers organised by topic, clear policy pages and contact forms that ask for the right details before a message ever reaches the team. Built with the support team's feedback (because improvement starts with listening), live for customers today.</p>
-    </div>
-    <a class="btn" href="https://getamalahealth.com/apps/help/" target="_blank" rel="noopener">Visit the help center <span aria-hidden="true">→</span></a>
+    <article class="card"><span class="tag">AI training</span><h3>Rebuilt the AI's playbook</h3><p>Built and maintain 20+ conversation flows for tracking, returns, subscriptions, and address updates in a structured format.</p><div class="out">Fewer contradictions and faster fixes.</div></article>
+    <article class="card"><span class="tag">Safety</span><h3>Guardrails protecting revenue</h3><p>Built checks for payment disputes, review threats, and fraud claims with strict verification rules.</p><div class="out">Risky chats reach humans fast; routine ones clear instantly.</div></article>
+    <article class="card"><span class="tag">Retention</span><h3>Respectful save offers</h3><p>Designed AI-led retention for subscription cancellations with tailored offers and honest confirmations.</p><div class="out">Saves achieved without loop friction.</div></article>
   </div>
 </section>
 
@@ -119,29 +187,28 @@
   <div class="eyebrow">Journey</div>
   <h2>Six months, start to now.</h2>
   <div class="tl">
-    <div class="step"><div class="when">LATE APRIL</div><h3>Took over the AI program</h3><p>Inherited an AI agent that handed almost every conversation to a person. Started weekly reporting and a mistake log to see where it failed and why.</p></div>
-    <div class="step"><div class="when">SUMMER</div><h3>Taught it to finish the job</h3><p>Rewrote the core flows, added safety gates and tightened how the AI reads order and tracking data. Resolved conversations grew from dozens a month to thousands.</p></div>
-    <div class="step"><div class="when">AUTUMN</div><h3>Widened the reach</h3><p>Helped launch live chat with the AI on it, rebuilt the help center and tracking page, and cleaned up the storefront content behind repeat questions.</p></div>
-    <div class="step"><div class="when">NOW</div><h3>Polishing for quality</h3><p>A warmer voice, smarter escalation logic and a consistent playbook across every flow, each change tested against real conversations before it ships.</p></div>
+    <div class="step"><div class="when">LATE APRIL</div><h3>Took over the AI program</h3><p>Inherited an AI agent that escalated nearly every chat. Launched weekly reporting and mistake logs.</p></div>
+    <div class="step"><div class="when">SUMMER</div><h3>Taught it to finish the job</h3><p>Rewrote core flows and order data integration. Resolved chats scaled from dozens to thousands.</p></div>
+    <div class="step"><div class="when">AUTUMN</div><h3>Widened the reach</h3><p>Helped launch live chat AI, rebuilt the help center, and fixed storefront content points.</p></div>
   </div>
 </section>
 
 <footer class="close">
   <p>I make AI support feel like talking to someone who read your message.</p>
-  <p class="sub">Open to roles in AI operations, conversational AI design, customer experience automation, system configuration and storefront content.</p>
+  <p class="sub">Open to roles in AI operations, conversational AI design, and customer experience automation.</p>
 </footer>
 
 </div>
 
 <script>
 (function(){
-  // Line charts, built from each card's data
   var NS='http://www.w3.org/2000/svg';
   function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
   function fmtV(v,f){return f==='pct'?(Math.round(v)+'%'):Math.round(v).toLocaleString('en-US');}
+  
   document.querySelectorAll('.chart').forEach(function(c){
     var ys=c.dataset.series.split(',').map(Number), xs=c.dataset.labels.split(','), f=c.dataset.fmt;
-    var W=420,H=170,pl=6,pr=6,pt=22,pb=24, max=Math.max.apply(null,ys);
+    var W=420,H=140,pl=6,pr=6,pt=16,pb=20, max=Math.max.apply(null,ys);
     var top=f==='pct'?Math.ceil(max/20)*20:Math.ceil(max/10000)*10000;
     var X=function(i){return pl+i*(W-pl-pr)/(ys.length-1)}, Y=function(v){return pt+(1-v/top)*(H-pt-pb)};
     var svg=el('svg',{viewBox:'0 0 '+W+' '+H,'aria-hidden':'true'});
@@ -151,62 +218,45 @@
     var ln=el('path',{'class':'ln',d:d}); svg.appendChild(ln);
     ys.forEach(function(v,i){
       var last=i===ys.length-1, first=i===0;
-      var g=el('circle',{'class':'pt'+(last?' end':''),cx:X(i),cy:Y(v),r:last?5:3.5});
+      var g=el('circle',{'class':'pt'+(last?' end':''),cx:X(i),cy:Y(v),r:last?4.5:3});
       var t=el('title',{}); t.textContent=xs[i]+': '+fmtV(v,f); g.appendChild(t); svg.appendChild(g);
-      var lx=el('text',{x:X(i),y:H-6,'text-anchor':first?'start':last?'end':'middle'}); lx.textContent=xs[i]; svg.appendChild(lx);
-      if(first||last){var tv=el('text',{'class':'v',x:X(i)+(first?0:0),y:Y(v)-10,'text-anchor':first?'start':'end'}); tv.textContent=fmtV(v,f); svg.appendChild(tv);}
+      var lx=el('text',{x:X(i),y:H-4,'text-anchor':first?'start':last?'end':'middle'}); lx.textContent=xs[i]; svg.appendChild(lx);
+      if(first||last){var tv=el('text',{'class':'v',x:X(i),y:Y(v)-8,'text-anchor':first?'start':'end'}); tv.textContent=fmtV(v,f); svg.appendChild(tv);}
     });
     c.querySelector('.plot').appendChild(svg);
     c._ln=ln;
   });
 
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce || !('IntersectionObserver' in window)) return;
-  document.documentElement.classList.add('js');
-
-  // Number each section's eyebrow
-  document.querySelectorAll('section .eyebrow').forEach(function(e, i){
-    var n = document.createElement('span'); n.className = 'num'; n.textContent = '0' + (i + 1) + ' /';
-    e.insertBefore(n, e.firstChild);
-  });
-
-  // Scroll progress bar
-  var bar = document.createElement('div'); bar.className = 'progress'; bar.setAttribute('aria-hidden','true');
-  document.body.appendChild(bar);
-  function prog(){
+  // Scroll Progress bar
+  var bar = document.createElement('div'); bar.className = 'progress'; document.body.appendChild(bar);
+  addEventListener('scroll', function(){
     var h = document.documentElement.scrollHeight - innerHeight;
     bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, scrollY / h) : 0) + ')';
-  }
-  addEventListener('scroll', prog, {passive:true}); prog();
+  }, {passive:true});
 
-  // Section reveals: heading first, then items stagger in
-  var sel = '.hero .eyebrow, .hero h1, .hero .role, .hero .thesis, .hero .chips, section .eyebrow, section h2, .lead, .metric, .footnote, .how-item, .card, .sample, .step, .close p, .hero .context';
+  // Intersection Observer for scroll fade-ins
+  var sel = '.hero > div > *, section, .metric, .how-item, .card, .step';
   var items = Array.prototype.slice.call(document.querySelectorAll(sel));
-  items.forEach(function(el){
-    var sib = Array.prototype.indexOf.call(el.parentNode.children, el);
-    el.style.setProperty('--d', Math.min(sib, 6) * 0.09 + 's');
+  items.forEach(function(el, i){
+    el.style.setProperty('--d', (i % 3) * 0.12 + 's');
     el.classList.add('rv');
   });
   var ro = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } });
-  }, {threshold: 0.12, rootMargin: '0px 0px -8% 0px'});
+  }, {threshold: 0.1, rootMargin: '0px 0px -5% 0px'});
   items.forEach(function(el){ ro.observe(el); });
 
-  var hl = document.querySelectorAll('.hl');
-  setTimeout(function(){ hl.forEach(function(h){ h.classList.add('on'); }); }, 300);
-
-  // Count-ups and bar growth when a metric scrolls into view
-  function fmt(n){ return n.toLocaleString('en-US'); }
+  // Number counters
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if (!e.isIntersecting) return;
       io.unobserve(e.target);
       e.target.querySelectorAll('.count').forEach(function(c){
         var to = +c.dataset.to, dec = +(c.dataset.dec||0), pre = c.dataset.prefix || '', suf = c.dataset.suffix || '';
-        var t0 = performance.now(), dur = 1300;
+        var t0 = performance.now(), dur = 1200;
         (function tick(t){
           var p = Math.min(1, (t - t0) / dur), v = to * (1 - Math.pow(1 - p, 3));
-          c.textContent = pre + (dec ? v.toFixed(dec) : fmt(Math.round(v))) + suf;
+          c.textContent = pre + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-US')) + suf;
           if (p < 1) requestAnimationFrame(tick);
         })(t0);
       });
@@ -217,7 +267,7 @@
         requestAnimationFrame(function(){ requestAnimationFrame(function(){ ln.style.transition = ''; ln.style.strokeDashoffset = 0; ch.classList.remove('pre'); }); });
       }
     });
-  }, {threshold: 0.35});
+  }, {threshold: 0.3});
   document.querySelectorAll('.metric').forEach(function(m){ io.observe(m); });
 })();
 </script>
