@@ -3,11 +3,78 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Alec · AI Operations & Systems</title>
+<title>Supplement Brand Operations · AI Systems</title>
 <meta name="description" content="The impact of Alec's AI Operations role for a direct-to-consumer supplement brand since late April 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
+<style>
+/* Supplement Brand Custom Scroll-Stopping Vibe Enhancements */
+body {
+  background: radial-gradient(circle at 50% 0%, #121c18 0%, #080d0b 50%, #040606 100%) fixed;
+  color: #f0f4f2;
+}
+
+/* Scroll Liquid Progress Line */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 24px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(52,211,153,0.4), rgba(56,189,248,0.4), rgba(52,211,153,0.1));
+  z-index: 99;
+  pointer-events: none;
+}
+
+/* Card Glow & Glassmorphism Refinement */
+.metric, .card, .how-item, .sample, .step {
+  background: rgba(18, 28, 24, 0.75) !important;
+  border: 1px solid rgba(52, 211, 153, 0.15) !important;
+  backdrop-filter: blur(12px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+.metric:hover, .card:hover, .how-item:hover {
+  transform: translateY(-6px);
+  border-color: rgba(52, 211, 153, 0.5) !important;
+  box-shadow: 0 12px 40px -10px rgba(52, 211, 153, 0.15);
+}
+
+/* Accent Color Shifts for Supplement Vibe */
+.hl {
+  color: #34d399 !important;
+  text-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
+}
+
+.topnav a, .eyebrow, .tag, .when {
+  color: #34d399 !important;
+}
+
+/* Pulse animation for key metrics */
+@keyframes pulseGlow {
+  0% { text-shadow: 0 0 0px rgba(52,211,153,0); }
+  50% { text-shadow: 0 0 15px rgba(52,211,153,0.4); }
+  100% { text-shadow: 0 0 0px rgba(52,211,153,0); }
+}
+
+.metric .big .count {
+  animation: pulseGlow 4s infinite;
+}
+
+/* Custom Chart Line Adjustment */
+.plot .ln {
+  stroke: #34d399 !important;
+  stroke-width: 2.8px;
+}
+.plot .area {
+  fill: rgba(52, 211, 153, 0.08) !important;
+}
+.plot .pt {
+  fill: #080d0b !important;
+  stroke: #34d399 !important;
+}
+</style>
 </head>
 <body>
 <div class="wrap">
