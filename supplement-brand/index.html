@@ -75,7 +75,7 @@ body::before {
 }
 .hero .context { color: var(--muted); font-size: 16px; max-width: 660px; margin-bottom: 36px; }
 
-.chips { display: flex; flex-wrap: gap; gap: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
   font-family: 'IBM Plex Mono', monospace; font-size: 12px;
   background: var(--surface); border: 1px solid var(--border);
@@ -84,9 +84,18 @@ body::before {
 }
 .chip:hover { border-color: var(--accent); color: var(--text); transform: translateY(-2px); }
 
-/* Scroll Animation Hooks */
-.rv { opacity: 0; transform: translateY(30px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); transition-delay: var(--d, 0s); }
-.rv.in { opacity: 1; transform: translateY(0); }
+/* Interactive Scroll Reveal Animation Effect */
+.rv {
+  opacity: 0;
+  transform: translateY(50px) scale(0.98);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--d, 0s);
+  will-change: opacity, transform;
+}
+.rv.in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 
 /* Sections */
 section { padding: 100px 0; border-bottom: 1px solid var(--border); }
@@ -100,19 +109,20 @@ section h2 {
 }
 .lead { color: var(--muted); font-size: 18px; max-width: 740px; margin-bottom: 56px; }
 
-/* Cinematic Metric Cards */
+/* Cinematic Metric Cards with 3D Card Hover Depth */
 .ledger { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 32px; }
 @media(max-width: 768px) { .ledger { grid-template-columns: 1fr; } }
 
 .metric {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 36px; position: relative; overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
 }
 .metric:hover {
-  transform: translateY(-6px);
-  border-color: rgba(245, 158, 11, 0.4);
-  box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.12);
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(245, 158, 11, 0.15);
 }
 .metric .k { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; }
 .metric .big { font-family: 'Bricolage Grotesque', sans-serif; font-size: 48px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 16px; color: var(--accent); }
@@ -152,7 +162,7 @@ section h2 {
   display: flex; flex-direction: column; position: relative;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
 }
-.card:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.1); }
+.card:hover { transform: translateY(-8px); border-color: var(--accent); box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.1); }
 .card .tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
 .card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 14px; }
 .card p { color: var(--muted); font-size: 15px; margin-bottom: 28px; flex-grow: 1; }
@@ -347,16 +357,16 @@ section h2 {
     bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, scrollY / h) : 0) + ')';
   }, {passive:true});
 
-  // Intersection Observer for smooth cinematic fade-ins
+  // Smooth Cinematic Scroll Intersection Observer with Slide-Up Scaling
   var sel = '.hero > div > *, section, .metric, .how-item, .card, .step, .sample';
   var items = Array.prototype.slice.call(document.querySelectorAll(sel));
   items.forEach(function(el, i){
-    el.style.setProperty('--d', (i % 3) * 0.08 + 's');
+    el.style.setProperty('--d', (i % 3) * 0.06 + 's');
     el.classList.add('rv');
   });
   var ro = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } });
-  }, {threshold: 0.08, rootMargin: '0px 0px -5% 0px'});
+  }, {threshold: 0.05, rootMargin: '0px 0px -3% 0px'});
   items.forEach(function(el){ ro.observe(el); });
 
   // Number counters
