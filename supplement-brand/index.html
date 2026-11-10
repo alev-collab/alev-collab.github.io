@@ -39,8 +39,10 @@ section .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spa
 section h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(32px,4vw,44px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:20px;}
 .lead{color:var(--muted);font-size:18px;max-width:720px;margin-bottom:48px;}
 
-/* Ledger / Metrics */
-.ledger{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:32px;}
+/* Ledger / Metrics - Forced 2 columns for symmetry */
+.ledger{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:32px;}
+@media(max-width:768px){.ledger{grid-template-columns:1fr;}}
+
 .metric{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative;overflow:hidden;transition:transform 0.3s ease, border-color 0.3s ease;}
 .metric:hover{transform:translateY(-4px);border-color:var(--hl);}
 .metric .k{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;}
@@ -56,20 +58,23 @@ section h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(32px,4vw
 .plot text{fill:var(--muted);font-size:10px;font-family:'IBM Plex Mono',monospace;}
 .plot .v{fill:var(--text);font-weight:500;}
 
-.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px;}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
+@media(max-width:768px){.strip{grid-template-columns:1fr;}}
 .strip .metric{padding:20px 24px;}
 .strip .metric .big{font-size:32px;margin-bottom:0;}
 .footnote{font-size:12px;color:var(--muted);font-family:'IBM Plex Mono',monospace;line-height:1.5;}
 
-/* How I work */
-.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:40px;}
+/* How I work - 2 columns */
+.how{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px;}
+@media(max-width:768px){.how{grid-template-columns:1fr;}}
 .how-item{background:var(--surface);border:1px solid var(--border);padding:32px;border-radius:var(--radius);transition:transform 0.3s ease;}
 .how-item:hover{transform:translateY(-4px);}
 .how-item h3{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;margin-bottom:12px;font-weight:700;}
 .how-item p{color:var(--muted);font-size:15px;}
 
-/* Work Grid */
-.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px;}
+/* Work Grid - 3 columns */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+@media(max-width:900px){.work{grid-template-columns:1fr;}}
 .card{background:var(--surface);border:1px solid var(--border);padding:32px;border-radius:var(--radius);display:flex;flex-direction:column;position:relative;transition:transform 0.3s ease, border-color 0.3s ease;}
 .card:hover{transform:translateY(-4px);border-color:var(--hl);}
 .card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--hl);margin-bottom:12px;}
@@ -221,7 +226,7 @@ section h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(32px,4vw
       var g=el('circle',{'class':'pt'+(last?' end':''),cx:X(i),cy:Y(v),r:last?4.5:3});
       var t=el('title',{}); t.textContent=xs[i]+': '+fmtV(v,f); g.appendChild(t); svg.appendChild(g);
       var lx=el('text',{x:X(i),y:H-4,'text-anchor':first?'start':last?'end':'middle'}); lx.textContent=xs[i]; svg.appendChild(lx);
-      if(first||last){var tv=el('text',{'class':'v',x:X(i),y:Y(v)-8,'text-anchor':first?'start':'end'}); tv.textContent=fmtV(v,f); svg.appendChild(tv);}
+      if(first||last){var tv=el('text',{x:X(i),y:Y(v)-8,'text-anchor':first?'start':'end'}); tv.textContent=fmtV(v,f); svg.appendChild(tv);}
     });
     c.querySelector('.plot').appendChild(svg);
     c._ln=ln;
