@@ -55,7 +55,7 @@
 
   .footnote { margin-top:16px; font-size:0.8rem; color:var(--muted); font-family:"IBM Plex Mono",monospace; }
 
-  /* How / Work / Timeline grids */
+  /* How / Work grids */
   .how-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:34px; }
   .how-item { padding:24px; border:1px solid var(--border); background:var(--surface); border-radius:14px; }
   .how-item h3 { font-size:1.15rem; margin-bottom:8px; font-family:"Bricolage Grotesque",sans-serif; }
@@ -70,15 +70,18 @@
   .project-card a { font-family:"IBM Plex Mono",monospace; font-size:0.8rem; color:var(--accent); text-decoration:none; margin-bottom:10px; display:inline-block; }
   .project-card a:hover { text-decoration:underline; }
 
-  .tl-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:34px; }
-  .step { padding:24px; border:1px solid var(--border); background:var(--surface); border-radius:14px; display:flex; flex-direction:column; gap:8px; }
-  .step .when { font-family:"IBM Plex Mono",monospace; font-size:0.75rem; color:var(--accent); letter-spacing:0.1em; }
-  .step h3 { font-size:1.2rem; font-family:"Bricolage Grotesque",sans-serif; margin:0; }
-  .step p { color:var(--muted); line-height:1.65; margin:0; }
+  /* Timeline Progress Progression */
+  .timeline { position:relative; margin-top:40px; padding-left:32px; display:flex; flex-direction:column; gap:36px; }
+  .timeline::before { content:""; position:absolute; left:7px; top:8px; bottom:8px; width:2px; background:var(--border); }
+  .tl-step { position:relative; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:24px; }
+  .tl-step::before { content:""; position:absolute; left:-36px; top:28px; width:12px; height:12px; border-radius:50%; background:var(--bg); border:2px solid var(--accent); box-shadow:0 0 0 4px rgba(84,211,250,0.15); }
+  .tl-step .when { font-family:"IBM Plex Mono",monospace; font-size:0.75rem; color:var(--accent); letter-spacing:0.1em; margin-bottom:6px; text-transform:uppercase; }
+  .tl-step h3 { font-size:1.2rem; font-family:"Bricolage Grotesque",sans-serif; margin:0 0 8px 0; }
+  .tl-step p { color:var(--muted); line-height:1.65; margin:0; }
 
   .footer { padding:42px 0; border-top:1px solid var(--border); color:var(--muted); }
   @media (max-width:900px) {
-    .ledger, .how-grid, .project-grid, .tl-grid, .strip { grid-template-columns:1fr; }
+    .ledger, .how-grid, .project-grid, .strip { grid-template-columns:1fr; }
   }
   @media (max-width:700px) {
     .site-inner { width:min(100% - 32px,1180px); }
@@ -260,23 +263,23 @@
       <div class="site-inner">
         <p class="eyebrow mb-3" style="color:var(--accent); font-size:12px;">04 / JOURNEY</p>
         <h2 id="journey-title" class="display section-heading font-bold" style="font-size:24px;">Six months, start to now.</h2>
-        <div class="tl-grid">
-          <div class="step">
+        <div class="timeline">
+          <div class="tl-step">
             <div class="when">LATE APRIL</div>
             <h3>Took over the AI program</h3>
             <p>Inherited an AI agent that handed almost every conversation to a person. Started weekly reporting and a mistake log to see where it failed and why.</p>
           </div>
-          <div class="step">
+          <div class="tl-step">
             <div class="when">SUMMER</div>
             <h3>Taught it to finish the job</h3>
             <p>Rewrote the core flows, added safety gates and tightened how the AI reads order and tracking data. Resolved conversations grew from dozens a month to thousands.</p>
           </div>
-          <div class="step">
+          <div class="tl-step">
             <div class="when">AUTUMN</div>
             <h3>Widened the reach</h3>
             <p>Helped launch live chat with the AI on it, rebuilt the help center and tracking page, and cleaned up the storefront content behind repeat questions.</p>
           </div>
-          <div class="step">
+          <div class="tl-step">
             <div class="when">NOW</div>
             <h3>Polishing for quality</h3>
             <p>A warmer voice, smarter escalation logic and a consistent playbook across every flow, each change tested against real conversations before it ships.</p>
