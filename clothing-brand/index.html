@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Clothing brand AI operations portfolio and case study.">
 <title>Clothing Brand Operations · Alec</title>
+<meta name="description" content="The impact of AI Operations for a direct-to-consumer clothing brand from Sept 2026 to present.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
@@ -25,32 +25,28 @@
   .hero h1 { max-width:940px; font-size:clamp(3.1rem,7.4vw,7rem); line-height:.99; }
   .hero h1::first-line { color:var(--accent); }
   .hero-description { max-width:650px; line-height:1.7; }
-  .action-row { display:flex; flex-wrap:wrap; gap:12px; }
-  .action { min-height:50px; padding:13px 20px; display:inline-flex; align-items:center; justify-content:center; text-align:center; border-radius:8px; text-decoration:none; font-weight:600; transition:transform .2s ease,background-color .2s ease,border-color .2s ease; }
-  .action:hover { transform:translateY(-2px); }
-  .action-primary { background:var(--accent); color:#071117; }
-  .action-secondary { border:1px solid #678091; color:var(--text); background:rgba(19,27,35,.7); }
-  a:focus-visible { outline:3px solid #ffdb78; outline-offset:4px; border-radius:5px; }
   .section { padding:clamp(72px,9vw,118px) 0; border-top:1px solid var(--border); }
   .section-heading { max-width:780px; line-height:1.08; }
   .section-lead { max-width:720px; line-height:1.7; }
-  .proof-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:30px; }
-  .proof-card,.project-card { min-width:0; border:1px solid var(--border); background:var(--surface); border-radius:14px; }
-  .proof-card { padding:23px 18px 21px; display:flex; flex-direction:column; gap:12px; }
-  .metric-number { font-family:"Bricolage Grotesque",sans-serif; font-size:clamp(1.85rem,3vw,2.8rem); font-weight:700; line-height:1; letter-spacing:-.055em; white-space:nowrap; color:var(--accent); }
-  .metric-label { line-height:1.5; color:var(--muted); font-size:0.9rem; }
+  .proof-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:30px; }
+  .proof-card,.project-card,.step-card { min-width:0; border:1px solid var(--border); background:var(--surface); border-radius:14px; }
+  .proof-card { padding:26px 22px; display:flex; flex-direction:column; gap:8px; }
+  .metric-number { font-family:"Bricolage Grotesque",sans-serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:700; line-height:1; letter-spacing:-.055em; color:var(--accent); }
+  .metric-label { line-height:1.5; color:var(--muted); font-size:0.95rem; }
   .project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:34px; }
   .project-card { display:flex; flex-direction:column; padding:clamp(22px,3vw,32px); }
   .project-card h3 { line-height:1.13; font-size:1.35rem; margin-top:12px; margin-bottom:12px; }
-  .project-card p { line-height:1.65; color:var(--muted); margin-bottom:20px; }
+  .project-card p { line-height:1.65; color:var(--muted); margin-bottom:16px; }
+  .out { font-family:"IBM Plex Mono",monospace; font-size:0.8rem; color:var(--accent); background:#122d39; padding:8px 12px; border-radius:6px; border:1px solid #397084; margin-top:auto; }
+  .how-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:34px; }
+  .how-item { padding:24px; border:1px solid var(--border); background:var(--surface); border-radius:14px; }
+  .how-item h3 { font-size:1.15rem; margin-bottom:8px; }
+  .how-item p { color:var(--muted); line-height:1.65; margin:0; }
   .footer { padding:42px 0; border-top:1px solid var(--border); color:var(--muted); }
-  @media (max-width:1000px) {
-    .proof-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  }
   @media (max-width:700px) {
     .site-inner { width:min(100% - 32px,1180px); }
     .topline-inner { min-height:64px; }
-    .proof-grid, .project-grid { grid-template-columns:1fr; }
+    .proof-grid, .project-grid, .how-grid { grid-template-columns:1fr; }
   }
 </style>
 </head>
@@ -65,8 +61,8 @@
   <main>
     <section class="hero site-inner" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow mb-7" style="color:var(--accent); font-size:12px;">CLOTHING BRAND OPERATIONS · SEPT 2026 TO PRESENT</p>
-        <h1 id="hero-title" class="display font-extrabold mb-7">94.5% AI resolution rate under high-volume apparel traffic.</h1>
+        <p class="eyebrow mb-7" style="color:var(--accent); font-size:12px;">WORK &amp; IMPACT · SEPT 2026 TO PRESENT</p>
+        <h1 id="hero-title" class="display font-extrabold mb-7">Clothing Brand Operations</h1>
         <p class="hero-description mb-8" style="color:var(--muted);">High-velocity customer support automation for pure Shopify online store orders, built to withstand major media surges.</p>
       </div>
     </section>
@@ -74,42 +70,83 @@
     <section class="section" aria-labelledby="proof-title">
       <div class="site-inner">
         <p class="eyebrow mb-3" style="color:var(--accent); font-size:12px;">01 / IMPACT</p>
-        <h2 id="proof-title" class="display section-heading font-bold" style="font-size:24px;">Maintaining peak efficiency during high-volume apparel traffic.</h2>
+        <h2 id="proof-title" class="display section-heading font-bold" style="font-size:24px;">Maintaining a 94.5% AI resolution rate under high-volume apparel traffic.</h2>
+        <p class="section-lead mt-3" style="color:var(--muted);">Delivering exceptional automated support for the online clothing store, keeping hand-off rates exceptionally low while scaling seamlessly through major traffic spikes.</p>
+        
         <div class="proof-grid">
           <article class="proof-card">
             <span class="metric-number">2,415</span>
-            <span class="metric-label">Conversations resolved by AI</span>
+            <span class="metric-label">Conversations the AI resolved on its own, running total</span>
           </article>
           <article class="proof-card">
             <span class="metric-number">94.5%</span>
-            <span class="metric-label">Autonomous resolution rate</span>
+            <span class="metric-label">Share of AI conversations resolved without a hand-off</span>
           </article>
           <article class="proof-card">
             <span class="metric-number">242 h</span>
-            <span class="metric-label">Estimated agent hours saved</span>
+            <span class="metric-label">Agent hours saved (approximately 30 full shifts)</span>
           </article>
           <article class="proof-card">
             <span class="metric-number">912 tix</span>
-            <span class="metric-label">Broadcast media surge handled</span>
+            <span class="metric-label">Broadcast media surge handled across 3 days</span>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="how-title">
+      <div class="site-inner">
+        <p class="eyebrow mb-3" style="color:var(--accent); font-size:12px;">02 / HOW I WORK</p>
+        <h2 id="how-title" class="display section-heading font-bold" style="font-size:24px;">Architecting robust apparel workflows for high-volume retail surges.</h2>
+        <div class="how-grid">
+          <div class="how-item">
+            <h3 class="display font-bold">Unified product intelligence</h3>
+            <p>Consolidated sizing, fit, care, fabric, and stock inquiries into a single comprehensive ruleset.</p>
+          </div>
+          <div class="how-item">
+            <h3 class="display font-bold">Smart order logic</h3>
+            <p>Configured intelligent order tracking flows to automatically detect shipping delays and stalled carrier updates.</p>
+          </div>
+          <div class="how-item">
+            <h3 class="display font-bold">Founder feedback loops</h3>
+            <p>Structured product request logging directly for founders, correcting apparel sizing and v-neck inquiries.</p>
+          </div>
+          <div class="how-item">
+            <h3 class="display font-bold">Surge-ready infrastructure</h3>
+            <p>Designed and deployed high-capacity automation rules capable of absorbing hundreds of concurrent tickets during national broadcasts.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="work-title">
       <div class="site-inner">
-        <p class="eyebrow mb-3" style="color:var(--accent); font-size:12px;">02 / WORK</p>
+        <p class="eyebrow mb-3" style="color:var(--accent); font-size:12px;">03 / SELECTED WORK</p>
         <h2 id="work-title" class="display section-heading font-bold" style="font-size:24px;">What I built and fixed.</h2>
         <div class="project-grid">
           <article class="project-card">
             <span class="eyebrow" style="color:var(--accent); font-size:11px;">PRODUCT QA</span>
             <h3>Unified product &amp; sizing rules</h3>
             <p>Launched a centralized rule answering questions on fit, fabric, care, and stock from a single source of truth.</p>
+            <div class="out">Instant, accurate customer guidance across apparel collections.</div>
           </article>
           <article class="project-card">
             <span class="eyebrow" style="color:var(--accent); font-size:11px;">SURGE ENGINEERING</span>
             <h3>Broadcast media traffic surge handling</h3>
             <p>Engineered and deployed rapid-response automation handling 912 tickets in 3 days during November peaks.</p>
+            <div class="out">Zero backlog build-up during peak media exposure.</div>
+          </article>
+          <article class="project-card">
+            <span class="eyebrow" style="color:var(--accent); font-size:11px;">FOUNDER REPORTING</span>
+            <h3>Structured product request logging</h3>
+            <p>Eliminated flat dead-ends on unavailable items by routing structured product preference data straight to founders.</p>
+            <div class="out">Actionable inventory insights derived directly from support traffic.</div>
+          </article>
+          <article class="project-card">
+            <span class="eyebrow" style="color:var(--accent); font-size:11px;">EXCEPTION ROUTING</span>
+            <h3>Automated shipment triage</h3>
+            <p>Built automated triage protocols to intercept stalled shipments and route customer inquiries down proactive paths.</p>
+            <div class="out">Streamlined tracking updates and faster resolution for delivery exceptions.</div>
           </article>
         </div>
       </div>
