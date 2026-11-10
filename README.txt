@@ -6,11 +6,6 @@ Structure
   assets/site.css       Shared styles
 
 Add a new project
-  1. Copy the wnw-group folder, rename it (e.g. new-company), edit its index.html.
-  2. In index.html, copy one <a class="folder" ...> card, point href to "new-company/",
+  1. Copy the sample-brand folder, rename it (e.g. new-brand), edit its index.html.
+  2. In index.html, copy one <a class="folder" ...> card, point href to "new-brand/",
      and update the text. Delete the "Next chapter" card if you like.
-
-Publish for free
-  Netlify: app.netlify.com/drop - drag this whole folder onto the page. Done.
-  GitHub Pages: new public repo, upload these files, Settings > Pages > Deploy from branch (main).
-  Custom domain: buy one (~$10-15/yr) and add it in the host's domain settings.
