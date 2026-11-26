@@ -42,7 +42,7 @@ html.sw .topline:not(.sw-start) { opacity: 0; animation: sw-failsafe 0s linear 8
 .sw-out { animation: sw-out .22s ease-in forwards !important; pointer-events: none; }
 </style>
 <title>Supplement Brand Operations · Alec</title>
-<meta name="description" content="The impact of Alec's AI Operations role for a direct-to-consumer supplement brand since late April 2026.">
+<meta name="description" content="The impact of Alec's AI Operations role for a direct-to-consumer supplement brand since late April 2026, including a chat agent training simulator.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
@@ -115,6 +115,10 @@ html.sw .topline:not(.sw-start) { opacity: 0; animation: sw-failsafe 0s linear 8
   .project-card a { font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--accent); text-decoration:none; margin-bottom:10px; display:inline-block; }
   .project-card a:hover { text-decoration:underline; }
   .tag { font-family:"IBM Plex Mono",monospace; font-size:.75rem; color:var(--accent); text-transform:uppercase; letter-spacing:.1em; }
+  .project-card.feature { grid-column:1 / -1; border-color:#397084; background:linear-gradient(135deg,#132631,var(--surface) 60%); }
+  .project-card.feature h3 { font-size:clamp(1.5rem,2.6vw,2rem); }
+  .project-card.feature p { max-width:78ch; }
+  .sim-facts { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; }
   .out { font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--accent); background:#122d39; padding:8px 12px; border-radius:6px; border:1px solid #397084; margin-top:auto; }
 
   /* Journey: a line that draws down as you scroll */
@@ -165,6 +169,7 @@ html.sw .topline:not(.sw-start) { opacity: 0; animation: sw-failsafe 0s linear 8
         <span class="chip">Conversational AI design</span>
         <span class="chip">Support automation</span>
         <span class="chip">QA &amp; root cause</span>
+        <span class="chip">Agent training</span>
         <span class="chip">Help center &amp; storefront</span>
         <span class="chip">Reporting</span>
       </div>
@@ -248,6 +253,19 @@ html.sw .topline:not(.sw-start) { opacity: 0; animation: sw-failsafe 0s linear 8
         <p class="eyebrow reveal">03 / Selected work</p>
         <h2 id="work-title" class="display section-heading reveal" style="--d:.05s">What I built and fixed.</h2>
         <div class="project-grid">
+          <article class="project-card feature reveal" style="--d:.05s">
+            <span class="tag">Agent training · New</span>
+            <h3>A chat training simulator for the human team</h3>
+            <p>Built a full practice environment where new chat agents handle 120 realistic cases drawn from real past conversations. AI-played customers reply live, agents work the case in a helpdesk-style inbox with the real label set and SOP reference, and every case is graded on a points rubric (handling, routing, logged actions, SOP rules, labels, tone) with each deduction explained. Team leads get a results dashboard with per-agent drill-down, retakes and attempt history.</p>
+            <div class="sim-facts">
+              <span class="chip">120 cases · 6 hours</span>
+              <span class="chip">AI-played customers</span>
+              <span class="chip">6-part scoring rubric</span>
+              <span class="chip">Team lead dashboard</span>
+            </div>
+            <div class="out">Agents practise on real scenarios before they touch a live customer. Now in beta with team leads.</div>
+          </article>
+
           <article class="project-card reveal" style="--d:.05s">
             <span class="tag">AI training</span>
             <h3>Rebuilt the AI's playbook</h3>
@@ -339,7 +357,7 @@ html.sw .topline:not(.sw-start) { opacity: 0; animation: sw-failsafe 0s linear 8
           <div class="tl-step reveal" style="--d:.2s">
             <div class="when">Now</div>
             <h3>Polishing for quality</h3>
-            <p>A warmer voice, smarter escalation logic and a consistent playbook across every flow, each change tested against real conversations before it ships.</p>
+            <p>A warmer voice, smarter escalation logic and a consistent playbook across every flow, each change tested against real conversations before it ships. Also built a chat training simulator so new agents practise on real cases before going live.</p>
           </div>
         </div>
       </div>
